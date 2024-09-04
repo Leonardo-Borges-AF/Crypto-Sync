@@ -1,0 +1,70 @@
+.mobile-menu div {
+  width: 20px;
+  height: 2px;
+  background-color: #fafafa;
+  margin: 4px;
+  transition: 0.4s;
+}
+
+.mobile-menu.active .line1 {
+  transform: rotate(-45deg) translate(-4px, 4px);
+}
+
+.mobile-menu.active .line2 {
+  opacity: 0;
+}
+
+.mobile-menu.active .line3 {
+  transform: rotate(45deg) translate(-4px, -4px);
+}
+
+.Tokenization {
+  border: 10px solid white;
+}
+
+.fancy {
+  --offset: 3px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Conic gradient */
+.fancy::before {
+  content: '';
+  background: conic-gradient(transparent 270deg, #5F00E9, transparent);
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  aspect-ratio: 1;
+  width: 100%;
+  animation: rotate 2.5s linear infinite;
+}
+
+/* Overlay */
+.fancy::after {
+  content: '';
+  background: inherit;
+  border-radius: inherit;
+  position: absolute;
+  inset: var(--offset);
+  height: calc(100% - 2 * var(--offset));
+  width: calc(100% - 2 * var(--offset));
+}
+
+.fancy button {
+  background: transparent;
+  position: absolute;
+  inset: 0;
+  z-index: 10;
+}
+
+@keyframes rotate {
+  from {
+    transform: translate(-50%, -50%) scale(1.4) rotate(0turn);
+  }
+
+  to {
+    transform: translate(-50%, -50%) scale(1.4) rotate(1turn);
+  }
+}

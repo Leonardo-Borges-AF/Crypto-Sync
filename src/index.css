@@ -1,0 +1,168 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+:root {
+  --color-primary: #6438F4;
+  --color-onprimary: white;
+  --color-secondary: #1A1A1E;
+  --color-accent: hsl(224, 98%, 58%);
+  --color-background-primary: #000000;
+  --color-background-secondary: #08080A;
+  --color-background-input: #13152A;
+  --color-surface: white;
+  --color-text: #9195A6;
+  --color-text-light: #e7e7ef;
+  --color-border-dashed: #232429;
+  --color-outlined: #2a2b37;
+  --color-success: #40C057;
+  --color-success-background: #1D3121;
+  --color-success-outlined: #24492A;
+  padding: 0;
+  background-color: var(--color-background-primary);
+}
+
+html {
+  box-sizing: border-box;
+  /* background-color: var(--color-background-primary); */
+  scroll-behavior: smooth;
+}
+
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  min-height: -webkit-fill-available;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+html,
+body {
+  /* height: 100%; */
+  margin: 0;
+  line-height: 1.5;
+  color: #121212;
+}
+
+textarea,
+input,
+button {
+  outline: unset;
+  font-size: 1rem;
+  font-family: inherit;
+  border: none;
+  border-radius: 8px;
+  padding: 0.5rem 0.75rem;
+  box-shadow: 0 0px 1px hsla(0, 0%, 0%, 0.2), 0 1px 2px hsla(0, 0%, 0%, 0.2);
+  background-color: white;
+  line-height: 1.5;
+  margin: 0;
+}
+
+button {
+  color: #3992ff;
+  font-weight: 500;
+}
+
+textarea:hover,
+input:hover,
+button:hover {
+  box-shadow: 0 0px 1px hsla(0, 0%, 0%, 0.6), 0 1px 2px hsla(0, 0%, 0%, 0.2);
+}
+
+button:active {
+  box-shadow: 0 0px 1px hsla(0, 0%, 0%, 0.4);
+  transform: translateY(1px);
+}
+
+#contact h1 {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+#contact h1 form {
+  display: flex;
+  align-items: center;
+  margin-top: 0.25rem;
+}
+
+#contact h1 form button {
+  box-shadow: none;
+  font-size: 1.5rem;
+  font-weight: 400;
+  padding: 0;
+}
+
+#contact h1 form button[value="true"] {
+  color: #a4a4a4;
+}
+
+#contact h1 form button[value="true"]:hover,
+#contact h1 form button[value="false"] {
+  color: #eeb004;
+}
+
+form[action$="destroy"] button {
+  color: #f44250;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+.text-gradient {
+  background: linear-gradient(101deg, #FFF 21%, #999 74.12%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+#root {
+  display: flex;
+  height: 100%;
+  width: 100%;
+}
+
+
+::-webkit-scrollbar {
+  background-color: black;
+  width: 21px;
+}
+
+::-webkit-scrollbar-thumb {
+  box-shadow: inset 0 0 10px 10px #808080;
+  border-radius: 20px;
+  border: solid 8px transparent;
+}
+
+.titleEffect {
+  background: linear-gradient(135deg, #FFF 0%, #71717A 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
