@@ -41,13 +41,17 @@ export const HeaderMenu = ({ openMenu, setOpenMenu }: TProps) => {
             <p className='text-[#A1A1AA] text-opacity-80 font-main'>
               You’ll get everything through our exclusive members-only Telegram channel. Right after subscribing, you’ll receive a unique link to access the best market signals and analyses, along with a tutorial on how to follow them effectively.
             </p>
-            <button
-              className="hidden lg:flex px-4 py-3 justify-center items-center g rounded-full bg-[#6438F4] hover:bg-[#2D09A5] duration-300 z-50 w-full mt-auto"
-            >
-              <p className="text-white  font-main text-base font-medium leading-6 ">
-                Join Telegram Free
-              </p>
-            </button>
+            <a href="#telegram">
+              <button
+                onClick={() => setOpenMenu(!openMenu)}
+                className="hidden lg:flex px-4 py-3 justify-center items-center g rounded-full bg-[#6438F4] hover:bg-[#2D09A5] duration-300 z-50 w-full mt-auto"
+              >
+                <p className="text-white  font-main text-base font-medium leading-6 ">
+                  Join Telegram Free
+                </p>
+              </button>
+            </a>
+            
           </div>
           <div className='flex flex-col gap-8 p-6 rounded-2xl bg-[#0C0C0D] bg-opacity-85 w-[266px] h-[557px] backdrop-blur-sm'>
             <div className='flex items-center justify-center bg-[#0A0A11] rounded-full size-[91.3px]'>
@@ -57,14 +61,19 @@ export const HeaderMenu = ({ openMenu, setOpenMenu }: TProps) => {
               Reports
             </h3>
             <p className='text-[#A1A1AA] text-opacity-80 font-main'>
-              Take advantage of our free monthly report. As a member, you'll receive a weekly report and research on the top crypto assets, keeping you fully synced with the crypto market.            </p>
-            <button
-              className="hidden lg:flex px-4 py-3 justify-center items-center g rounded-full bg-[#6438F4] hover:bg-[#2D09A5] duration-300 z-50 w-full mt-auto"
-            >
-              <p className="text-white  font-main text-base font-medium leading-6 ">
-                Sign Up
-              </p>
-            </button>
+              Take advantage of our free monthly report. As a member, you'll receive a weekly report and research on the top crypto assets, keeping you fully synced with the crypto market.            
+            </p>
+            <a href="#news" className='hidden lg:flex px-4 py-3 justify-center items-center rounded-full z-50 w-full mt-auto'>
+              <button
+                onClick={() => setOpenMenu(!openMenu)}
+                className="hidden lg:flex px-4 py-3 justify-center items-center rounded-full bg-[#6438F4] hover:bg-[#2D09A5] duration-300 z-50 w-full mt-auto"
+              >
+                <p className="text-white  font-main text-base font-medium leading-6 ">
+                  Sign Up
+                </p>
+              </button>
+            </a>
+            
           </div>
           <div className='flex flex-col gap-8 p-6 rounded-2xl bg-[#0C0C0D] bg-opacity-85 w-[266px] h-[557px] backdrop-blur-sm'>
             <div className='flex items-center justify-center bg-[#0A0A11] rounded-full size-[91.3px]'>
@@ -74,14 +83,19 @@ export const HeaderMenu = ({ openMenu, setOpenMenu }: TProps) => {
               Sync Hub
             </h3>
             <p className='text-[#A1A1AA] text-opacity-80 font-main'>
-              Our platform brings everything you need into one place—news, research, signals, thematic portfolios, and reports—offering an intelligent way to access all the data and opportunities in the crypto market.            </p>
-            <button
-              className="hidden lg:flex px-4 py-3 justify-center items-center g rounded-full bg-[#6438F4] hover:bg-[#2D09A5] duration-300 z-50 w-full mt-auto"
-            >
-              <p className="text-white  font-main text-base font-medium leading-6 ">
-                Register Now
-              </p>
-            </button>
+              Our platform brings everything you need into one place—news, research, signals, thematic portfolios, and reports—offering an intelligent way to access all the data and opportunities in the crypto market.            
+            </p>
+            <a href="#news" className='hidden lg:flex px-4 py-3 justify-center items-center rounded-full z-50 w-full mt-auto'>
+              <button
+                onClick={() => setOpenMenu(!openMenu)}
+                className="hidden lg:flex px-4 py-3 justify-center items-center g rounded-full bg-[#6438F4] hover:bg-[#2D09A5] duration-300 z-50 w-full mt-auto"
+              >
+                <p className="text-white  font-main text-base font-medium leading-6 ">
+                  Register Now
+                </p>
+              </button>
+            </a>
+            
           </div>
         </div>
         {/* <div

@@ -6,7 +6,8 @@ export default {
       boxShadow: {
         custom: "0px 8px 32px 0px rgba(158, 12, 255, 0.32)",
         custom2: `0px 0px 35.5px 0px rgba(55, 0, 92, 0.70)`,
-        custom3: '0px 0px 39.5px 1px rgba(101, 57, 244, 0.45)'
+        custom3: '0px 0px 39.5px 1px rgba(101, 57, 244, 0.45)',
+        custom4: "0 0 46.2px 1px rgba(129, 93, 250, 0.3)"
       },
       variants: {
         extend: {

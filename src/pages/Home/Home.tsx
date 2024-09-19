@@ -5,6 +5,7 @@ import { Questions, Session3} from './components'
 import { Session1 } from './components/Session1.components'
 import { Session4 } from './components/Session4.components'
 import { Session5 } from './components/Session5.components'
+import { Newsletter } from './components/Newsletter.component'
 
 export const Home = () => {
   const session1Ref = useRef<HTMLDivElement>(null)
@@ -43,16 +44,18 @@ export const Home = () => {
   return (
     <div className="w-full relative overflow-hidden">
       <Header />
-      <div className="h-[100px]" />
+      <div className="md:h-[100px] h-[150px]" />
       <div ref={session1Ref} className="fixed z-10 top-24 w-full">
         <Session1 />
       </div>
       <div style={{ height: session1Height }}></div>
       <div className="relative z-20">
         {/* <Session2 /> */}
+        
         <Session3 />
-        <Session4 />
+        <Newsletter/>
         <Session5/>
+        <Session4 />
         <Questions />
         <Footer />
       </div>

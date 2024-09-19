@@ -8,13 +8,14 @@ export const Session4 = () => {
         <BackgroundDashed />
         <div className="flex flex-col md:gap-20 gap-12 z-20 relative w-full items-center justify-center">
           <div className='flex flex-col gap-14 w-full items-center'>
-            <p
+             <p
+              id="pricing"
               data-aos="fade-up"
-              className="font-bold font-main text-3xl md:text-5xl w-full  text-white text-center"
+              className="font-semibold font-main text-3xl  w-full  text-white text-center"
             >
-              CryptoSync’s <span className='text-[#6338F4] '>FREE CONTENT</span> will end in: 
+              Choose Your Subscription Plan
             </p>
-
+            {/*
             <div className='flex gap-6'>
               <div className='flex flex-col items-center gap-6'>
                 <div className='bg-transparent rounded-full px-14 py-[60px] border-[6px] border-solid border-gradient-to-r from-red-500 to-blue-500 items-center'>
@@ -56,7 +57,7 @@ export const Session4 = () => {
                   SECONDS
                 </p>
               </div>
-            </div>
+            </div> */}
             {/* cards */}
             <div className='flex gap-8 w-full'>
               {/* card 1 */}
@@ -67,8 +68,8 @@ export const Session4 = () => {
                     <p className='text-white font-semibold font-main'>
                       Sync Basic
                     </p>
-                    <p className='font-main text-white'>
-                      A$ <span className='text-[34px]'>0,00</span>/ month
+                    <p className='font-main text-white font-bold text-4xl '>
+                      FREE
                     </p>
                   </div>
                   <div className='w-full border border-white border-opacity-20'/>
@@ -205,7 +206,7 @@ export const Session4 = () => {
 
                 <button className='border-2 border-solid border-[#6338F4] py-4 px-[38px] bg-transparent rounded-full w-fit mx-auto'>
                   <p className='text-[#6338F4] font-main font-extrabold'>
-                    Coming Soon
+                    Start Now
                   </p>
                 </button>
               </div>
@@ -216,8 +217,8 @@ export const Session4 = () => {
                     <p className='text-white font-semibold font-main'>
                       Sync Wealth
                     </p>
-                    <p className='font-main text-white'>
-                      A$ <span className='text-[34px]'>0,00</span>/ month
+                    <p className='font-main text-white font-bold text-4xl'>
+                      Contact Us
                     </p>
                   </div>
                   <div className='w-full border border-white border-opacity-20'/>

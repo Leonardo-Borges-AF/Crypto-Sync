@@ -1,45 +1,121 @@
+import { yupResolver } from '@hookform/resolvers/yup'
+import { useMutation } from '@tanstack/react-query'
+import { get as _get } from 'lodash'
+import { useForm } from 'react-hook-form' // Import useForm
+import toast from 'react-hot-toast'
+import { TailSpin } from 'react-loader-spinner'
+import { postSubscriptions } from '~/apis/beehiiv'
 import { BackgroundDashed } from '~/components/BackgroundDashed.component'
+import { Yup } from '~/utils/formValidators/yupSetLocale'
 
 export const Session5 = () => {
+  type TForm = {
+    email: string
+  }
+
+  const schema = Yup.object().shape({
+    email: Yup.string()
+      .email('Invalid email format')
+      .required('Email is required'),
+  })
+
+  const { register, handleSubmit, reset, formState } = useForm<TForm>({
+    mode: 'all',
+    resolver: yupResolver(schema),
+  })
+
+  async function woosalSubmit(data: TForm) {
+    mutate({
+      body: {
+        email: data.email,
+      },
+    })
+  }
+  const { mutate, isPending } = useMutation({
+    mutationFn: postSubscriptions,
+    onSuccess: () => {
+      toast.success('Subscribed successfully!', {
+        position: 'top-right',
+      })
+      reset()
+    },
+    onError: (error) => {
+      reset()
+      console.log(error)
+    },
+  })
+
+  //   <input
+  //   type="text"
+  //   placeholder="Name"
+  //   className="bg-white border relative border-black border-opacity-20 items-center px-[38px] py-4 text-black rounded-[10px]"
+  // />
 
   return (
-
     <>
-    <div className="bg-[#080809]">
-        
+      <div id="news" className="bg-[#080809]">
         <div className=" relative max-w-[1280px] mx-auto ">
-        <BackgroundDashed />
-            <div className="flex flex-col md:py-20 relative z-20 gap-[35px] items-center">
-                <p className="font-main font-semibold text-[34px] text-center text-white">
-                    Join Our Newsletter and Get 30% Off at Launch!  
-                </p>
-                <p className="fomt-main text-xl text-center text-white leading-8">
-                    Sign up for our newsletter today and receive 
-                    an exclusive 30% discount coupon when we launch 
-                    our premium <br /> platform. Don't miss out on this 
-                    special offer – be the first to know and save big!
-                </p>
-                <div className="flex gap-6">
-                    <input 
-                    type="text" 
-                    placeholder="Name"
-                    className="bg-white border relative border-black border-opacity-20 items-center px-[38px] py-4 text-black rounded-[10px]"
-                    />
-                    <input 
-                    type="text" 
-                    placeholder="E-mail"
-                    className="bg-white border border-black border-opacity-20 items-center px-[38px] py-4 text-black rounded-[10px]"
-                    />
-                    <button className="bg-[#6438F4] px-[38px] py-4 rounded-full items-center">
-                        <p className="text-white font-main font-extrabold text-center">
-                            SIGN UP
-                        </p>
-                    </button>
-                </div>
+          <BackgroundDashed />
+          <div className="flex flex-col md:py-20 relative z-20 gap-9 items-center">
+            <div className='flex flex-col items-center'>
+              <p className="font-main font-semibold text-[34px] text-center text-white">
+                Join The <span className='text-[#6438F4]'>SYNC</span> Newsletter
+              </p>
+              <p className="fomt-main text-xl text-center text-white leading-8">
+                Subscribe to receive free weekly reports straight to your inbox
+              </p>
             </div>
             
+            <div className="flex gap-6">
+              <form
+                onSubmit={handleSubmit(woosalSubmit)}
+                className="flex md:m-auto gap-6"
+              >
+                <input
+                  type="text"
+                  id="email"
+                  placeholder="E-mail"
+                  className="bg-white border border-black border-opacity-20 items-center px-[38px] py-4 text-black rounded-[10px]"
+                  {...register('email')}
+                />
+                {formState.errors.email && (
+                  <p className="text-red-500 text-sm absolute bottom-[40px]">
+                    {_get(formState.errors, 'email.message')}
+                  </p>
+                )}
+
+                <a href="#questions">
+                  <button
+                    className="bg-[#6438F4] px-[38px] py-4 rounded-full items-center text-white font-main font-extrabold text-center"
+                    disabled={isPending}
+                  >
+                    {isPending ? (
+                      <span className="mx-auto flex gap-4">
+                        <TailSpin
+                          visible={true}
+                          height="20"
+                          width="20"
+                          color="#fff"
+                          radius="1"
+                        />
+                        SIGN UP
+                      </span>
+                    ) : (
+                      <span className="mx-auto">SIGN UP</span>
+                    )}
+                  </button>
+                </a>
+              </form>
+            </div>
+          </div>
         </div>
-    </div>
+      </div>
     </>
   )
 }
+// function useForm<T>(arg0: { mode: string; resolver: any; }): { register: any; handleSubmit: any; reset: any; formState: any; } {
+//     throw new Error('Function not implemented.');
+// }
+// function yupResolver(schema: Yup.ObjectSchema<{ email: string; }, Yup.AnyObject, { email: undefined; }, "">) {
+//     throw new Error('Function not implemented.');
+// }

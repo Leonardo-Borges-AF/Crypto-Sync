@@ -1,9 +1,9 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import { useEffect, useRef, useState } from 'react'
-import image1 from '/images/people-1.jpeg'
-import image2 from '/images/people-2.jpeg'
-import image3 from '/images/people-3.jpeg'
-import image4 from '/images/people-4.jpeg'
+// import image1 from '/images/people-1.jpeg'
+// import image2 from '/images/people-2.jpeg'
+// import image3 from '/images/people-3.jpeg'
+// import image4 from '/images/people-4.jpeg'
 import video1 from '/videos/IA_card.mp4'
 import video2 from '/videos/Card1.mp4'
 import video3 from '/videos/Card3.mp4'
@@ -91,6 +91,8 @@ export const Session3 = () => {
 
   const nextIndex = (currentIndex + 1) % cards.length
 
+  
+
   return (
     <div
       id="session3"
@@ -100,21 +102,20 @@ export const Session3 = () => {
         ref={containerRef}
         className="relative max-w-[1184px] mx-auto flex flex-col gap-8 py-12 mb-[550px] md:mb-0"
       >
-        <div className="flex flex-col md:flex-row gap-28 relative">
+        <div id="discord" className="flex flex-col md:flex-row gap-28 relative">
           <div className="gap-16 md:gap-64 flex flex-col max-w-[600px]">
             <Session
               refSession={session1Ref}
               abovetitle="MEMBER HUB"
-              title="Telegram"
-              buttomTitle="Join Telegram Free"
+              title="Discord"
+              buttomTitle="Join Discord"
               description={
                 <>
-                  <p className="text-colorText text-base">
-                    You’ll get everything through our exclusive 
-                    members-only Telegram channel. Right after 
-                    subscribing, you’ll receive a unique link 
-                    to access the best market signals and analyses, 
-                    along with a tutorial on how to follow them effectively.
+                  <p  className="text-colorText text-base">
+                    Stay updated on all new content and connect with the community 
+                    through our exclusive Discord channel. You'll get access to the best 
+                    market signals, analyses, and support, along with real-time 
+                    updates and discussions.
                   </p>
                 </>
               }
@@ -127,7 +128,7 @@ export const Session3 = () => {
               title="Reports"
               description={
                 <>
-                  <div className='flex flex-col gap-[30px]'>
+                  <div id="reports-section" className='flex flex-col gap-[30px]'>
                     <p className="text-colorText text-base">
                       Take advantage of our free monthly report. 
                       As a member, you'll receive a weekly report 
@@ -135,13 +136,14 @@ export const Session3 = () => {
                       you fully synced with the crypto market.
                     </p>
 
-                    <form id="subscribeForm" className='flex gap-6'>
+                    <form id="subscribeForm" className='flex gap-6' >
                         <input
                           className='rounded-lg py-4 pl-6 w-[300px]' 
                           type="email" 
                           id="emailInput" 
                           placeholder="Email" 
-                          required />
+                          required
+                          />
                         <button 
                           type="submit"
                           className='rounded-full bg-[#6438F4] py-4 px-9 text-white font-extrabold font-main'
@@ -160,9 +162,10 @@ export const Session3 = () => {
               refSession={session3Ref}
               abovetitle="All-In-One Investor HUB"
               title="Sync Hub - Platform"
-              buttomTitle="Register now"
+
               description={
                 <>
+                <div className='flex flex-col gap-7'>
                   <p className="text-colorText text-base">
                     Our platform brings everything you need into one place—news, 
                     research, signals, thematic portfolios, and reports—offering 
@@ -170,40 +173,50 @@ export const Session3 = () => {
                     in the crypto market. Plus, our Telegram channel puts these 
                     insights right at your fingertips.
                   </p>
+
+                  <a href="#news">
+                    <button className='flex gap-[10px] px-[38px] py-4 border border-solid border-white border-opacity-20 w-fit rounded-full bg-transparent items-center'>
+                      <p className='text-white font-main font-medium '>
+                        Register now
+                      </p>
+                      <FaArrowRight className="text-white max-w-5 max-h-4" />
+                    </button>
+                  </a>
+                  
+                </div>
+                  
                 </>
               }
-              bottomComponent={
-                <div className="flex flex-row items-center gap-4 mt-8">
-                  <div className="flex flex-row">
-                    <img
-                      src={image1}
-                      alt="image1"
-                      className="w-[48px] h-[48px] rounded-full object-cover"
-                    />
-                    <img
-                      src={image2}
-                      alt="image2"
-                      className="w-[48px] h-[48px] rounded-full object-cover  -ml-4"
-                    />
-                    <img
-                      src={image3}
-                      alt="image3"
-                      className="w-[48px] h-[48px] rounded-full object-cover  -ml-4"
-                    />
-                    <img
-                      src={image4}
-                      alt="image4"
-                      className="w-[48px] h-[48px] rounded-full object-cover  -ml-4"
-                    />
-                  </div>
+              // bottomComponent={
+              //   <div className="flex flex-row items-center gap-4 mt-8">
+              //     <div className="flex flex-row">
+              //       <img
+              //         src={image1}
+              //         alt="image1"
+              //         className="w-[48px] h-[48px] rounded-full object-cover"
+              //       />
+              //       <img
+              //         src={image2}
+              //         alt="image2"
+              //         className="w-[48px] h-[48px] rounded-full object-cover  -ml-4"
+              //       />
+              //       <img
+              //         src={image3}
+              //         alt="image3"
+              //         className="w-[48px] h-[48px] rounded-full object-cover  -ml-4"
+              //       />
+              //       <img
+              //         src={image4}
+              //         alt="image4"
+              //         className="w-[48px] h-[48px] rounded-full object-cover  -ml-4"
+              //       />
+              //     </div>
 
-                  <span className="text-white text-base">
-                    Join 1.014 others
-                  </span>
-                </div>
-              }
-              button="Join the telegram community"
-              button_link="/"
+              //     <span className="text-white text-base">
+              //       Join 1.014 others
+              //     </span>
+              //   </div>
+              // }
             />
           </div>
           <div className="relative w-full">

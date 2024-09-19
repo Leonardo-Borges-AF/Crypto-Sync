@@ -5,7 +5,7 @@ import { useState } from 'react'
 
 export const Questions = () => {
   return (
-    <div className="relative">
+    <div id="questions" className="relative">
       <div className="bg-background-primary absolute w-svw h-full -z-20"></div>
       <div className="md:pt-[300px] md:px-20 lg:px-[185px] md:pb-[100px] px-5 py-16 flex flex-col items-center gap-16 relative max-w-[1280px] mx-auto ">
         <img

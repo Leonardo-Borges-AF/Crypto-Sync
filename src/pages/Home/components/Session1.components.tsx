@@ -1,10 +1,8 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import './Session1.css'
-import { FaArrowRight } from 'react-icons/fa'
 import Video from '/videos/bitcoin-video.mp4'
 import GridImage from '/images/grid-light.png'
-import { useEffect, useRef } from 'react'
-import { GoArrowDown } from 'react-icons/go'
+import { useEffect, useRef, useState } from 'react'
 import Reports from '/images/icons/Subtract.png'
 import Signals from '/images/icons/candle.png'
 import Consulting from '/images/icons/Consulting.png'
@@ -13,9 +11,39 @@ import Ideas from '/images/icons/Ideas.png'
 import Educational from '/images/icons/Educational.png'
 
 
-import { FaArrowUp } from "react-icons/fa6";
-
 export const Session1 = () => {
+  const texts = ['Reports ', 'Signals ', 'Consulting ', 'Insights ', 'Analisys ']; // As palavras a serem escritas
+  const [currentTextIndex, setCurrentTextIndex] = useState(0);
+  const [currentCharIndex, setCurrentCharIndex] = useState(0);
+  const [isDeleting, setIsDeleting] = useState(false);
+  const [displayedText, setDisplayedText] = useState('');
+
+  useEffect(() => {
+    const handleTyping = () => {
+      const currentText = texts[currentTextIndex];
+      
+      if (isDeleting) {
+        setDisplayedText(currentText.slice(0, currentCharIndex - 1));
+        setCurrentCharIndex((prev) => prev - 1);
+        if (currentCharIndex === 0) {
+          setIsDeleting(false);
+          setCurrentTextIndex((prev) => (prev + 1) % texts.length);
+        }
+      } else {
+        setDisplayedText(currentText.slice(0, currentCharIndex + 1));
+        setCurrentCharIndex((prev) => prev + 1);
+        if (currentCharIndex === currentText.length) {
+          setTimeout(() => setIsDeleting(true), 1000); // Pausa antes de apagar
+        }
+      }
+    };
+
+    const typingSpeed = isDeleting ? 100 : 200; // Velocidade de digitação/apagar
+    const typingInterval = setTimeout(handleTyping, typingSpeed);
+
+    return () => clearTimeout(typingInterval);
+  }, [currentCharIndex, isDeleting, texts, currentTextIndex]);
+
   const containerRef = useRef(null)
   const videoRef = useRef(null)
   const isMobile = window.innerWidth < 768
@@ -75,7 +103,7 @@ export const Session1 = () => {
           {!isMobile && (
             <video
               ref={videoRef}
-              className="fixed top-[180px] object-cover -z-10 mix-blend-lighten w-[750px] left-1/2 transform -translate-x-1/2"
+              className="fixed top-[80px] object-cover -z-10 mix-blend-lighten w-[750px] left-1/2 transform -translate-x-1/2"
               autoPlay
               loop
               muted
@@ -83,102 +111,28 @@ export const Session1 = () => {
               src={Video}
             ></video>
           )}
-          <h1 className="font-Jakarta text-[40px] md:text-[80px] font-extrabold uppercase text-gradient">
-            BOOST YOUR INVESTMENTS          
-          </h1>
-          <div className="flex gap-[5px]">
-            <div className="h-[2px] w-10 md:w-48 bg-white mt-7 md:mt-[60px]" />
-            <h2 className="text-white font-Jakarta text-4xl md:leading-relaxed md:text-[52px] font-extralight uppercase">
-              Your Crypto, Our EXPERTISE
+          <div className='flex flex-col w-full items-center gap-9 md:pt-[400px]'>
+            <h2 className='text-white font-main font-bold text-[50px] text-center'>
+              The all-in-one Crypto Hub <br />
+              for: <span className='bg-gradient-to-b from-[#4B19F0] via-[#4B19F0] to-[#A78CFE] inline-block text-transparent bg-clip-text'>{displayedText}</span>
             </h2>
-          </div>
-
-          <div className="flex flex-col md:flex-row justify-between">
-            <div className="flex flex-col gap-10">
-              <p className="md:text-lg font-main font-normal leading-normal self-stretch max-w-[358px] mt-10 text-white">
-                At <span className='font-extrabold'>CryptoSync</span>, we provide 
-                everything you need to stay in <span className='text-[#6338F4]'>SYNC </span> 
-                with the crypto world. From <span className='font-extrabold'>trading </span>  
-                <span className='font-extrabold'>signals </span> to in-depth <span className='font-extrabold'>reports</span>, 
-                <span className='font-extrabold'> research</span>, <span className='font-extrabold'>thematic portfolios</span>, and 
-                <span className='font-extrabold'> educational content</span>, we've got you 
-                covered.
-              </p>
-
-              <div className="flex flex-col md:flex-row gap-6 mb-24">
-                <button
-                  onClick={() => (window.location.href = '/page2')}
-                  className="flex px-[38px] py-4 justify-center items-center gap-[10px] rounded-full bg-[#6438F4] hover:bg-[#2D09A5] duration-300 "
-                >
-                  <p className="text-white text-center font-main text-base font-medium leading-6 ">
-                    Start Now
-                  </p>
-                  <FaArrowRight className="text-white" />
-                </button>
-                <button
-                  className="flex px-[38px] py-4 justify-center items-center border-solid border rounded-full md:bg-[#00000005] bg-[#00000002] backdrop-blur-[18.75px] hover:backdrop-blur-[19px] hover:bg-[#FFFFFF26] duration-300"
-                  style={{ borderColor: 'rgba(255, 255, 255, 0.20)' }}
-                >
-                  <p className="text-white text-center font-main text-base font-medium leading-6">
-                    Learn more
-                  </p>
-                </button>
-
-                <video
-                  className="flex md:hidden relative object-cover -z-10 mix-blend-lighten h-[400px] left-1/2 transform -translate-x-1/2"
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  src={Video}
-                ></video>
-              </div>
-            </div>
-            <div className="flex flex-col md:gap-6 gap-8 md:mt-10 md:mb-0 mb-28">
-              <div className="flex md:gap-6 gap-[90px]">
-                <div className="flex flex-col gap-2 w-[150px] items-center">
-                  <p className="font-Jakarta text-[38px] tracking-[-1.2px] leading-snug font-bold titleEffect">
-                    +1.8K %
-                  </p>
-                  <p className="font-Jakarta md:text-base text-lg font-normal leading-normal text-[#A4A4AD]">
-                    Profit in Signals
-                  </p>
-                </div>
-                <div className="flex flex-col gap-2 w-[150px] items-center">
-                  <p className="font-Jakarta text-[38px] tracking-[-1.2px] leading-snug font-bold titleEffect">
-                    +5.7k
-                  </p>
-                  <p className="font-Jakarta md:text-base text-lg font-normal leading-normal text-[#A4A4AD]">
-                    Users in Community
-                  </p>
-                </div>
-              </div>
-              <div className="flex md:gap-6 gap-[90px] justify-center">
-                <div className="flex flex-col md:gap-2 w-[150px] items-center">
-                  <p className="font-Jakarta text-[38px] tracking-[-1.2px]  leading-snug font-bold titleEffect">
-                    +12
-                  </p>
-                  <p className="font-Jakarta md:text-base text-lg font-normal  leading-normal text-[#A4A4AD] text-center">
-                    Institucional <br /> Members
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className='w-full items-center flex flex-col gap-[29px]'>
-            <p className='text-white font-Jakarta font-extrabold text-[38px]'> What we offer</p>
-            <GoArrowDown  className='text-white text-4xl'/>
+            <p className='text-white font-main text-xl'>
+              Your Crypto in SYNC with our knowledge and expertise, equals Success.
+            </p>
+            <button className='bg-[#6438F4] rounded-full py-3 px-16 text-white font-main font-extrabold items-center'>
+              START NOW
+            </button>
           </div>
 
           {/* ////////////////////////////////////////////////////////////////////////////////////////////////////// */}
-          <div className='flex flex-col md:gap-[105px] md:pb-20'>
-            <div className='flex md:flex-row flex-col md:justify-between  '>
-              <div data-aos="fade-right" className='bg-[#0C0C0D] md:p-6 border border-solid border-[#1A1A1E] rounded-2xl items-center flex flex-col gap-4 w-[310px] '>
+          <div className='flex flex-col md:gap-[105px] md:pb-20 items-center justify-center md:justify-start w-full gap-9'>
+            <div className='flex md:flex-row flex-col md:justify-between w-full md:gap-0 gap-9 items-center'>
+              <div data-aos="fade-right" className='bg-[#0C0C0D] hover:bg-[#212123] hover:shadow-custom4 transition duration-300 md:p-6 border border-solid border-[#1A1A1E] rounded-2xl items-center flex flex-col gap-4 w-[310px] '>
                 <div className='rounded-full size-[74px] bg-[#1D1D20] flex items-center justify-center'>
                   <img src={Reports} className='w-9 h-[43px]' />
                 </div>
                 <div className='flex flex-col gap-6 items-center'>
-                  <p className='text-[#E7E7EF] font-extrabold text-[28px] text-center leading-9 font-Jakarta'>
+                  <p className='text-[#E7E7EF] font-extrabold text-[28px] text-center leading-9 font-Jakarta '>
                     Reports & Research
                   </p>
                   <p className='text-center text-[#A4A4AD] text-base  font-Jakarta'>
@@ -186,7 +140,7 @@ export const Session1 = () => {
                   </p>
                 </div>
               </div>
-              <div data-aos="fade-left" className='bg-[#0C0C0D]  md:p-6 border border-solid border-[#1A1A1E] rounded-2xl items-center flex flex-col gap-4 w-[310px]'>
+              <div data-aos="fade-left" className='bg-[#0C0C0D] hover:bg-[#212123] hover:shadow-custom4 transition duration-300 md:p-6 border border-solid border-[#1A1A1E] rounded-2xl items-center flex flex-col gap-4 w-[310px]'>
                 <div className='rounded-full size-[74px] bg-[#1D1D20] flex items-center justify-center'>
                   <img src={Signals} className='w-10 h-[48px]' />
                 </div>
@@ -200,8 +154,8 @@ export const Session1 = () => {
                 </div>
               </div>
             </div>
-            <div className='flex md:flex-row flex-col md:justify-between  '>
-              <div data-aos="fade-right" className='bg-[#0C0C0D] md:p-6 border border-solid border-[#1A1A1E] rounded-2xl items-center flex flex-col gap-4 w-[310px]'>
+            <div className='flex md:flex-row flex-col md:justify-between  w-full md:gap-0 gap-9 items-center'>
+              <div data-aos="fade-right" className='bg-[#0C0C0D] hover:bg-[#212123] hover:shadow-custom4 transition duration-300 md:p-6 border border-solid border-[#1A1A1E] rounded-2xl items-center flex flex-col gap-4 w-[310px]'>
                 <div className='rounded-full size-[74px] bg-[#1D1D20] flex items-center justify-center'>
                   <img src={Consulting} className='w-[53px] h-[44px]' />
                 </div>
@@ -214,7 +168,7 @@ export const Session1 = () => {
                   </p>
                 </div>
               </div>
-              <div data-aos="fade-left" className='bg-[#0C0C0D] md:p-6 border border-solid border-[#1A1A1E] rounded-2xl items-center flex flex-col gap-4 w-[310px]'>
+              <div data-aos="fade-left" className='bg-[#0C0C0D] hover:bg-[#212123] hover:shadow-custom4 transition duration-300 md:p-6 border border-solid border-[#1A1A1E] rounded-2xl items-center flex flex-col gap-4 w-[310px]'>
                 <div className='rounded-full size-[74px] bg-[#1D1D20] flex items-center justify-center'>
                   <img src={Portfolios} className='w-11 h-[38px]' />
                 </div>
@@ -228,8 +182,8 @@ export const Session1 = () => {
                 </div>
               </div>
             </div>
-            <div className='flex md:flex-row flex-col md:justify-between  '>
-              <div data-aos="fade-right" className='bg-[#0C0C0D] md:p-6 border border-solid border-[#1A1A1E] rounded-2xl items-center flex flex-col gap-4 w-[310px]'>
+            <div className='flex md:flex-row flex-col md:justify-between w-full md:gap-0 gap-9 items-center'>
+              <div data-aos="fade-right" className='bg-[#0C0C0D] hover:bg-[#212123] hover:shadow-custom4 transition duration-300 md:p-6 border border-solid border-[#1A1A1E] rounded-2xl items-center flex flex-col gap-4 w-[310px]'>
                 <div className='rounded-full size-[74px] bg-[#1D1D20] flex items-center justify-center'>
                   <img src={Ideas} className='w-[27px] h-11' />
                 </div>
@@ -242,7 +196,7 @@ export const Session1 = () => {
                   </p>
                 </div>
               </div>
-              <div data-aos="fade-left" className='bg-[#0C0C0D] md:p-6 border border-solid border-[#1A1A1E] rounded-2xl items-center flex flex-col gap-4 w-[310px]'>
+              <div data-aos="fade-left" className='bg-[#0C0C0D] hover:bg-[#212123] hover:shadow-custom4 transition duration-300 md:p-6 border border-solid border-[#1A1A1E] rounded-2xl items-center flex flex-col gap-4 w-[310px]'>
                 <div className='rounded-full size-[74px] bg-[#1D1D20] flex items-center justify-center'>
                   <img src={Educational} className='w-10 h-[46px]' />
                 </div>
@@ -256,14 +210,6 @@ export const Session1 = () => {
                 </div>
               </div>
             </div>
-            <div className='w-full flex items-center justify-center'>
-              <button className='rounded-full py-4 px-[38px] bg-[#6438F4] flex gap-[10px] items-center'>
-                <p className='text-white font-main font-medium text-xl leading-6 '>
-                  Sign Up for Premium Hub
-                </p>
-                <FaArrowUp className='text-white  text-2xl rotate-45'/>
-              </button>
-            </div>
           </div>
           
 
@@ -273,3 +219,11 @@ export const Session1 = () => {
     </>
   )
 }
+<video
+                  className="flex md:hidden relative object-cover -z-10 mix-blend-lighten h-[400px] left-1/2 transform -translate-x-1/2"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  src={Video}
+                ></video>
