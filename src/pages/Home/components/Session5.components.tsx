@@ -56,7 +56,7 @@ export const Session5 = () => {
       <div id="news" className="bg-[#080809]">
         <div className=" relative max-w-[1280px] mx-auto ">
           <BackgroundDashed />
-          <div className="flex flex-col md:py-20 relative z-20 gap-9 items-center">
+          <div className="flex flex-col md:py-20 relative z-20 gap-9 items-center md:px-0 px-4">
             <div className='flex flex-col items-center'>
               <p className="font-main font-semibold text-[34px] text-center text-white">
                 Join The <span className='text-[#6438F4]'>SYNC</span> Newsletter
@@ -69,13 +69,14 @@ export const Session5 = () => {
             <div className="flex gap-6">
               <form
                 onSubmit={handleSubmit(woosalSubmit)}
-                className="flex md:m-auto gap-6"
+                className="flex md:m-auto gap-6 items-center"
               >
                 <input
                   type="text"
                   id="email"
                   placeholder="E-mail"
-                  className="bg-white border border-black border-opacity-20 items-center px-[38px] py-4 text-black rounded-[10px]"
+                  className="bg-white border border-black border-opacity-20 items-center md:px-[38px]  md:py-4 text-black rounded-[10px] md:w-fit md:h-fit w-52
+                   h-16"
                   {...register('email')}
                 />
                 {formState.errors.email && (
@@ -86,7 +87,7 @@ export const Session5 = () => {
 
                 <a href="#questions">
                   <button
-                    className="bg-[#6438F4] px-[38px] py-4 rounded-full items-center text-white font-main font-extrabold text-center hover:rounded-lg"
+                    className="bg-[#6438F4] md:px-[38px] py-4 rounded-full items-center text-white font-main font-extrabold text-center hover:rounded-lg"
                     disabled={isPending}
                   >
                     {isPending ? (

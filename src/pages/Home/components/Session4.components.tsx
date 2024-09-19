@@ -59,7 +59,7 @@ export const Session4 = () => {
               </div>
             </div> */}
             {/* cards */}
-            <div className='flex gap-8 w-full'>
+            <div className='flex md:flex-row flex-col gap-8 w-full'>
               {/* card 1 */}
               <div className='bg-transparent flex flex-col p-8 rounded-lg  border border-solid border-white gap-8 w-full h-[690px] justify-between'>
                 

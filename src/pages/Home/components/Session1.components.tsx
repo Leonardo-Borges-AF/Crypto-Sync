@@ -103,7 +103,7 @@ export const Session1 = () => {
           {!isMobile && (
             <video
               ref={videoRef}
-              className="fixed top-[80px] object-cover -z-10 mix-blend-lighten w-[750px] left-1/2 transform -translate-x-1/2"
+              className="absolute top-24 object-cover -z-10 mix-blend-lighten w-[750px] left-1/2 transform -translate-x-1/2"
               autoPlay
               loop
               muted
@@ -111,15 +111,26 @@ export const Session1 = () => {
               src={Video}
             ></video>
           )}
-          <div className='flex flex-col w-full items-center gap-9 md:pt-[400px]'>
-            <h2 className='text-white font-main font-bold text-[50px] text-center'>
-              The all-in-one Crypto Hub <br />
-              for: <span className='bg-gradient-to-b from-[#4B19F0] via-[#4B19F0] to-[#A78CFE] inline-block text-transparent bg-clip-text'>{displayedText}</span>
-            </h2>
-            <p className='text-white font-main text-xl'>
-              Your Crypto in SYNC with our knowledge and expertise, equals Success.
-            </p>
-            <button className='bg-[#6438F4] rounded-full py-3 px-16 text-white font-main font-extrabold items-center transition duration-500 hover:rounded-lg'>
+            <video
+              className="flex md:hidden relative object-cover -z-10 mix-blend-lighten h-[400px] left-1/2 transform -translate-x-1/2"
+              autoPlay
+              loop
+              muted
+              playsInline
+              src={Video}
+            ></video>
+          <div className='flex flex-col w-full items-center gap-9 md:pt-[470px] md:mb-0 mb-14'>
+            <div>
+              <h2 className='text-white font-main md:font-bold font-semibold md:text-[50px] leading-tight text-4xl text-center '>
+                The all-in-one Crypto Hub <br />
+                for: <span className='bg-gradient-to-b from-[#4B19F0] via-[#4B19F0] to-[#A78CFE] inline-block text-transparent bg-clip-text'>{displayedText}</span>
+              </h2>
+              <p className='text-white font-main md:text-xl text-lg md:text-start text-center'>
+                Your Crypto in SYNC with our knowledge and expertise, equals Success.
+              </p>
+            </div>
+            
+            <button className='bg-[#6438F4] rounded-full py-3 px-16 text-white font-main font-extrabold items-center transition duration-500 ease-in-out transform hover:rounded-lg'>
               START NOW
             </button>
           </div>
@@ -127,7 +138,7 @@ export const Session1 = () => {
           {/* ////////////////////////////////////////////////////////////////////////////////////////////////////// */}
           <div className='flex flex-col md:gap-[105px] md:pb-20 items-center justify-center md:justify-start w-full gap-9'>
             <div className='flex md:flex-row flex-col md:justify-between w-full md:gap-0 gap-9 items-center'>
-              <div data-aos="fade-right" className='bg-[#0C0C0D] hover:bg-[#212123] hover:shadow-custom4 transition duration-700 md:p-6 border border-solid border-[#1A1A1E] rounded-2xl items-center flex flex-col gap-4 w-[310px] '>
+              <div data-aos="fade-right" className='bg-[#0C0C0D] transition-all duration-700 md:p-6 border border-solid border-[#1A1A1E] rounded-2xl items-center flex flex-col gap-4 w-[310px] hover:shadow-custom4 hover:bg-[#212123]'>
                 <div className='rounded-full size-[74px] bg-[#1D1D20] flex items-center justify-center'>
                   <img src={Reports} className='w-9 h-[43px]' />
                 </div>
@@ -219,11 +230,4 @@ export const Session1 = () => {
     </>
   )
 }
-<video
-                  className="flex md:hidden relative object-cover -z-10 mix-blend-lighten h-[400px] left-1/2 transform -translate-x-1/2"
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
-                  src={Video}
-                ></video>
+                

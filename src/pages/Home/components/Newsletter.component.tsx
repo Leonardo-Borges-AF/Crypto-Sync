@@ -60,15 +60,15 @@ export const Newsletter = () => {
     return(
         <>
         <div className="bg-[#050505] relative">
-            <div className="pl-[50px] pt-14 pb-6 mx-auto flex flex-col gap-8 max-w-[1280px]">
+            <div className="md:pl-[50px} md:px-0 px-4 pt-14 pb-6 mx-auto flex flex-col gap-8 max-w-[1280px] md:items-start items-center justify-center">
                 <div className="flex flex-col gap-8">
-                    <h4 className="text-white font-semibold font-sans text-4xl ">
-                        Stay in sync with the crypto market! Check out <br /> our latest free reports:
+                    <h4 className="text-white font-semibold font-sans text-3xl md:text-4xl ">
+                        Stay in sync with the crypto market! Check out <br className="hidden md:block"/> our latest free reports:
                     </h4>
                 </div>
 
                 <div
-                    className="w-full max-w-[1183px] h-full md:h-[344px] border rounded-2xl p-8 flex flex-col relative bg-[#0D0E1C]"
+                    className="w-full h-full md:h-[344px] border rounded-2xl p-8 flex flex-col relative bg-[#0D0E1C]"
                     style={{
                     borderColor: "#2A2B37",
                     backgroundImage: `url(${showPost?.thumbnail_url})`,
