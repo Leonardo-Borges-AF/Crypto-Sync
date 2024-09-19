@@ -86,7 +86,7 @@ export const Session5 = () => {
 
                 <a href="#questions">
                   <button
-                    className="bg-[#6438F4] px-[38px] py-4 rounded-full items-center text-white font-main font-extrabold text-center"
+                    className="bg-[#6438F4] px-[38px] py-4 rounded-full items-center text-white font-main font-extrabold text-center hover:rounded-lg"
                     disabled={isPending}
                   >
                     {isPending ? (

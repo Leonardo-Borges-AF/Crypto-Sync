@@ -12,7 +12,7 @@ export const Header = () => {
           <a href="#reports-section" className='text-[#EFEFEF] font-light font-main '>Reports</a>
           <a href="#pricing" className='text-[#EFEFEF] font-light font-main '>Princing</a>
           <a href="#discord" className='text-[#EFEFEF] font-light font-main '>Community</a>
-          <button className='rounded-full bg-[#6438F4] px-12 py-3 text-white font-main font-bold items-center hover:rounded-md transition duration-[10000ms] ease-in-out'>
+          <button className='rounded-full bg-[#6438F4] px-12 py-3 text-white font-main font-bold items-center hover:rounded-md ease-in-out duration-500 transition '>
             START NOW
           </button>
         </div>

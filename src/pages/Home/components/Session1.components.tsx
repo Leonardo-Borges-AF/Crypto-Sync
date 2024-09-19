@@ -119,7 +119,7 @@ export const Session1 = () => {
             <p className='text-white font-main text-xl'>
               Your Crypto in SYNC with our knowledge and expertise, equals Success.
             </p>
-            <button className='bg-[#6438F4] rounded-full py-3 px-16 text-white font-main font-extrabold items-center'>
+            <button className='bg-[#6438F4] rounded-full py-3 px-16 text-white font-main font-extrabold items-center transition duration-500 hover:rounded-lg'>
               START NOW
             </button>
           </div>
@@ -127,7 +127,7 @@ export const Session1 = () => {
           {/* ////////////////////////////////////////////////////////////////////////////////////////////////////// */}
           <div className='flex flex-col md:gap-[105px] md:pb-20 items-center justify-center md:justify-start w-full gap-9'>
             <div className='flex md:flex-row flex-col md:justify-between w-full md:gap-0 gap-9 items-center'>
-              <div data-aos="fade-right" className='bg-[#0C0C0D] hover:bg-[#212123] hover:shadow-custom4 transition duration-300 md:p-6 border border-solid border-[#1A1A1E] rounded-2xl items-center flex flex-col gap-4 w-[310px] '>
+              <div data-aos="fade-right" className='bg-[#0C0C0D] hover:bg-[#212123] hover:shadow-custom4 transition duration-700 md:p-6 border border-solid border-[#1A1A1E] rounded-2xl items-center flex flex-col gap-4 w-[310px] '>
                 <div className='rounded-full size-[74px] bg-[#1D1D20] flex items-center justify-center'>
                   <img src={Reports} className='w-9 h-[43px]' />
                 </div>

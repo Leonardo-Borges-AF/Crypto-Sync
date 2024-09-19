@@ -117,7 +117,7 @@ export const Session4 = () => {
                     
                   </div>
                 </div>
-                <button className='border-2 border-solid border-[#6338F4] py-4 px-[38px] bg-transparent rounded-full w-fit mx-auto'>
+                <button className='border-2 border-solid border-[#6338F4] py-4 px-[38px] bg-transparent rounded-full w-fit mx-auto hover:rounded-lg'>
                   <p className='text-[#6338F4] font-main font-extrabold'>
                     Join Now
                   </p>
@@ -204,7 +204,7 @@ export const Session4 = () => {
                 </div>
                 
 
-                <button className='border-2 border-solid border-[#6338F4] py-4 px-[38px] bg-transparent rounded-full w-fit mx-auto'>
+                <button className='border-2 border-solid border-[#6338F4] py-4 px-[38px] bg-transparent rounded-full w-fit mx-auto hover:rounded-lg'>
                   <p className='text-[#6338F4] font-main font-extrabold'>
                     Start Now
                   </p>
@@ -217,7 +217,7 @@ export const Session4 = () => {
                     <p className='text-white font-semibold font-main'>
                       Sync Wealth
                     </p>
-                    <p className='font-main text-white font-bold text-4xl'>
+                    <p className='font-main text-white font-bold text-4xl '>
                       Contact Us
                     </p>
                   </div>
@@ -282,7 +282,7 @@ export const Session4 = () => {
                   </div>
                 </div>
 
-                <button className='border-2 border-solid border-[#6338F4] py-4 px-[38px] bg-transparent rounded-full w-fit mx-auto'>
+                <button className='border-2 border-solid border-[#6338F4] py-4 px-[38px] bg-transparent rounded-full w-fit mx-auto hover:rounded-lg'>
                   <p className='text-[#6338F4] font-main font-extrabold'>
                     Contact Us
                   </p>

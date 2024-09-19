@@ -4,11 +4,12 @@ import { useEffect, useRef, useState } from 'react'
 // import image2 from '/images/people-2.jpeg'
 // import image3 from '/images/people-3.jpeg'
 // import image4 from '/images/people-4.jpeg'
-import video1 from '/videos/IA_card.mp4'
-import video2 from '/videos/Card1.mp4'
-import video3 from '/videos/Card3.mp4'
+import image1 from '/images/image1.png'
+import image2 from '/images/image2.png'
+import image3 from '/images/image3.png'
 
-import { FaArrowDown, FaArrowRight } from 'react-icons/fa'
+
+import { FaArrowRight } from 'react-icons/fa'
 import './Session3.css'
 
 export const Session3 = () => {
@@ -16,9 +17,9 @@ export const Session3 = () => {
   const isMobile = window.innerWidth < 1024
 
   const cards = [
-    { video: video1, index: 0 },
-    { video: video2, index: 1 },
-    { video: video3, index: 2 },
+    { image: image1, index: 0 },
+    { image: image2, index: 1 },
+    { image: image3, index: 2 },
   ]
 
   const containerRef = useRef(null)
@@ -146,7 +147,7 @@ export const Session3 = () => {
                           />
                         <button 
                           type="submit"
-                          className='rounded-full bg-[#6438F4] py-4 px-9 text-white font-extrabold font-main'
+                          className='rounded-full bg-[#6438F4] py-4 px-9 text-white font-extrabold font-main hover:transition hover:duration-500 hover:rounded-lg'
                         >
                           SIGN UP
                         </button>
@@ -224,7 +225,7 @@ export const Session3 = () => {
               {cards.map((card, index) => (
                 <Card
                   key={index}
-                  video={card.video}
+                  image={card.image}
                   index={card.index + 1}
                   zIndex={cards.length - index}
                   current={index === currentIndex}
@@ -240,60 +241,39 @@ export const Session3 = () => {
 }
 
 type TCard = {
-  video: string
+  image: string
   index: number
   zIndex: number
   current: boolean
   next: boolean
 }
 
-const Card = ({ video, index, current, next }: TCard) => {
-  const videoRef = useRef<HTMLVideoElement>(null);
+const Card = ({ image, index, current, next }: TCard) => {
   let className = 'card'
   if (current) {
     className += ' card--current'
   } else if (next) {
     className += ' card--next'
   }
-  useEffect(() => {
-    if (videoRef.current) {
-      if (current) {
-        videoRef.current.play();
-      } else {
-        videoRef.current.pause();
-      }
-    }
-  }, [current]);
 
   return (
     <div
       className={`flex flex-col w-[346px] border border-outlined rounded-xl backdrop-blur-md absolute ${className}`}
     >
-      <video
-        ref={videoRef}
-        src={video}
-        autoPlay
-        loop
-        muted
+      <img
+        src={image}
+        alt={`Card ${index}`}
         className="w-full h-[322px] object-cover rounded-t-xl"
       />
       <div className="h-fit w-full text-white px-10 py-8">
         <div className="bg-background-secondary rounded-full w-10 h-10 flex mb-8 mx-auto">
           <span className="m-auto">{index}</span>
         </div>
-        <div className="flex flex-row justify-between items-center">
-          <div className="text-xl flex flex-col">
-            <label>Escolha um</label>
-            <label>comerciante</label>
-          </div>
-          <div className="bg-primary rounded-full w-10 h-10 flex">
-            <FaArrowDown className="text-white m-auto" />
-          </div>
-        </div>
       </div>
     </div>
   )
 }
+
 type TSession = {
   refSession: React.RefObject<HTMLDivElement>
   abovetitle: string
