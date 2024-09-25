@@ -117,11 +117,14 @@ export const Session4 = () => {
                     
                   </div>
                 </div>
-                <button className='border-2 border-solid border-[#6338F4] py-4 px-[38px] bg-transparent rounded-full w-fit mx-auto hover:rounded-lg'>
-                  <p className='text-[#6338F4] font-main font-extrabold'>
-                    Join Now
-                  </p>
-                </button>
+                <a href="https://app.cryptosync.com.au" className='mx-auto'>
+                  <button className='border-2 border-solid border-[#6338F4] py-4 px-[38px] bg-transparent w-fit mx-auto rounded-3xl transition-all duration-500 ease-in-out hover:rounded-lg'>
+                    <p className='text-[#6338F4] font-main font-extrabold'>
+                      Join Now
+                    </p>
+                  </button>
+                </a>
+                
               </div>
               {/* card2 */}
               <div className='bg-transparent flex flex-col p-8 rounded-lg  border-2 border-solid border-[#663AF4] gap-8 w-full h-[690px] justify-between'>
@@ -131,7 +134,7 @@ export const Session4 = () => {
                       Sync Premium
                     </p>
                     <p className='font-main text-white'>
-                      A$ <span className='text-[34px]'>60,00</span>/ month
+                      A$ <span className='text-[34px]'>80,00</span>/ month
                     </p>
                   </div>
                   <div className='w-full border border-white border-opacity-20'/>
@@ -203,12 +206,14 @@ export const Session4 = () => {
                   </div>
                 </div>
                 
-
-                <button className='border-2 border-solid border-[#6338F4] py-4 px-[38px] bg-transparent rounded-full w-fit mx-auto hover:rounded-lg'>
-                  <p className='text-[#6338F4] font-main font-extrabold'>
-                    Start Now
-                  </p>
-                </button>
+                <a href="https://app.cryptosync.com.au/checkout/cryptosync-premium" className='mx-auto'>
+                  <button className='border-2 border-solid border-[#6338F4] py-4 px-[38px] bg-transparent w-fit mx-auto rounded-3xl transition-all duration-500 ease-in-out hover:rounded-lg'>
+                    <p className='text-[#6338F4] font-main font-extrabold'>
+                      Start Now
+                    </p>
+                  </button>
+                </a>
+                
               </div>
               {/* card3 */}
               <div className='bg-transparent flex flex-col p-8 rounded-lg  border border-solid border-white gap-8 w-full h-[690px] justify-between'>
@@ -282,11 +287,16 @@ export const Session4 = () => {
                   </div>
                 </div>
 
-                <button className='border-2 border-solid border-[#6338F4] py-4 px-[38px] bg-transparent rounded-full w-fit mx-auto hover:rounded-lg'>
-                  <p className='text-[#6338F4] font-main font-extrabold'>
-                    Contact Us
-                  </p>
-                </button>
+                <a href="mailto:contact@cryptosync.com.au" className='mx-auto'>
+                  <button className='border-2 border-solid border-[#6338F4] py-4 px-[38px] bg-transparent w-fit mx-auto rounded-3xl transition-all duration-500 ease-in-out hover:rounded-lg'>
+                    <p className='text-[#6338F4] font-main font-extrabold'>
+                      Contact Us
+                    </p>
+                  </button>
+                </a>
+                
+
+                
               </div>
             </div>
           </div>

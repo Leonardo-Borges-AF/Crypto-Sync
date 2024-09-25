@@ -53,8 +53,8 @@ export const Home = () => {
         {/* <Session2 /> */}
         
         <Session3 />
-        <Newsletter/>
         <Session5/>
+        <Newsletter/>
         <Session4 />
         <Questions />
         <Footer />

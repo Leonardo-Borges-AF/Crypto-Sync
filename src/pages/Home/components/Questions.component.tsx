@@ -74,11 +74,11 @@ const Card = ({ title, text }: TProps) => {
       style={{ borderColor: 'var(--grey-corlos-gray-500, #2A2B37)' }}
     >
       <div className='flex flex-col w-full'>
-        <div className='flex md:justify-between md:gap-0 gap-[10px] rounded-lg bg-[#080809] md:items-center w-full'>
+        <div onClick={Expand} className='flex md:justify-between md:gap-0 gap-[10px] rounded-lg bg-[#080809] md:items-center w-full cursor-pointer'>
           <p className="text-white font-Jakarta text-lg font-semibold w-full">
             {title}
           </p>
-          <button onClick={Expand} className="focus:outline-none bg-transparent">
+          <button  className="focus:outline-none bg-transparent">
             {isExpanded ? (
               <FaMinus className="md:size-6 size-[18px] text-white transition duration-500 ease-in-out transform hover:-rotate-180" />
             ) : (

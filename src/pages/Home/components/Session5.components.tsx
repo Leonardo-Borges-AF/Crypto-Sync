@@ -53,7 +53,7 @@ export const Session5 = () => {
 
   return (
     <>
-      <div id="news" className="bg-[#080809]">
+      <div id="news" className="bg-[#050505]">
         <div className=" relative max-w-[1280px] mx-auto ">
           <BackgroundDashed />
           <div className="flex flex-col md:py-20 relative z-20 gap-9 items-center md:px-0 px-4">
@@ -87,7 +87,7 @@ export const Session5 = () => {
 
                 <a href="#questions">
                   <button
-                    className="bg-[#6438F4] md:px-[38px] py-4 rounded-full items-center text-white font-main font-extrabold text-center hover:rounded-lg"
+                    className="bg-[#6438F4] md:px-[38px] py-4items-center text-white font-main font-extrabold text-center rounded-3xl md:py-4 transition-all duration-500 ease-in-out hover:rounded-lg"
                     disabled={isPending}
                   >
                     {isPending ? (

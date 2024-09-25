@@ -12,11 +12,12 @@ AOS.init({
   duration: 800,
 })
 
+
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
     <QueryClientProvider client={queryClient}>
-      <Toaster />
-      <App />
+        <Toaster />
+        <App />
     </QueryClientProvider>
   </React.StrictMode>,
 )

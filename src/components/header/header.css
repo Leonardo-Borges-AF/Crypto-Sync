@@ -70,16 +70,8 @@
 }
 
 .botao{
-  background-color: #6438F4;
-  color: white;
-  font-weight: bold;
-  padding: 10px 60px;
-  border: none;
-  border-radius: 9999px;
-  cursor:pointer;
-  transition: border-radius o.5s ease-in-out;
-}
-
-.botao:hover {
-  border-radius: 12px;
+  background: transparent;
+  position: relative;
+  z-index: 50;
+  
 }

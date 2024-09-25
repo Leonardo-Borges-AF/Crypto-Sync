@@ -22,13 +22,10 @@ export const Footer = ({ children }: TProps) => {
     >
       {children}
       <div className="max-w-[1280px] mx-auto w-full">
-        <div className="flex flex-col justify-center items-center gap-12">
-          <div className="flex flex-col gap-10 justify-center items-center">
+        <div className="flex flex-col justify-center items-center gap-12 w-full">
+          <div className="flex flex-col gap-10 justify-center items-center w-full">
             <img src={logo} className="w-[227px] h-[70px]" />
-            <div className="flex flex-col items-center gap-5">
-              <p className="text-white text-xl font-main font-semibold">
-                Find us at:
-              </p>
+            <div className="flex flex-col items-center gap-5 w-full">
               <div className="flex gap-4">
                 <button
                   onClick={() => (window.location.href = 'https://www.linkedin.com/company/nortechofficial/')}
@@ -60,7 +57,17 @@ export const Footer = ({ children }: TProps) => {
                 </button>
               </div>
             </div>
-
+            <div className='flex flex-col'>
+                
+              <div className='hidden md:flex gap-28 items-center justify-center text-white w-full'>
+                <a href='mailto:account@cryptosync.com.au' className='text-white '>
+                  contact@cryptosync.com.au
+                </a>
+                <p>
+                  52 Vulture St West End QLD 4101
+                </p>
+              </div>
+            </div>
           </div>
           <p className='font-main text-[#A4A4AD] text-sm'>
             © 2024 CRYPTOSYNC AI PTY LTD | All rights reserved

@@ -4,7 +4,6 @@ import { useEffect, useRef, useState } from 'react'
 // import image2 from '/images/people-2.jpeg'
 // import image3 from '/images/people-3.jpeg'
 // import image4 from '/images/people-4.jpeg'
-import image1 from '/images/image1.png'
 import image2 from '/images/image2.png'
 import image3 from '/images/image3.png'
 
@@ -17,7 +16,6 @@ export const Session3 = () => {
   const isMobile = window.innerWidth < 1024
 
   const cards = [
-    { image: image1, index: 0 },
     { image: image2, index: 1 },
     { image: image3, index: 2 },
   ]
@@ -26,7 +24,6 @@ export const Session3 = () => {
   const imageRef = useRef(null)
   const session1Ref = useRef(null)
   const session2Ref = useRef(null)
-  const session3Ref = useRef(null)
 
   useEffect(() => {
     if (currentIndex === null) {
@@ -42,9 +39,7 @@ export const Session3 = () => {
       const session2top =
         (session2Ref.current as any).getBoundingClientRect().top +
         (window.scrollY - 450)
-      const session3top =
-        (session3Ref.current as any).getBoundingClientRect().top +
-        (window.scrollY - 450)
+
 
       if (window.scrollY > session1top) {
         setCurrentIndex(0)
@@ -52,9 +47,7 @@ export const Session3 = () => {
       if (window.scrollY > session2top) {
         setCurrentIndex(1)
       }
-      if (window.scrollY > session3top) {
-        setCurrentIndex(2)
-      }
+
 
       const container = containerRef.current as any
       const image = imageRef.current as any
@@ -103,28 +96,11 @@ export const Session3 = () => {
         ref={containerRef}
         className="relative max-w-[1184px] mx-auto flex flex-col gap-8 py-12 mb-[550px] md:mb-0"
       >
-        <div id="discord" className="flex flex-col md:flex-row gap-28 relative">
+        <div className="flex flex-col md:flex-row gap-28 relative">
           <div className="gap-16 md:gap-64 flex flex-col max-w-[600px]">
+          
             <Session
               refSession={session1Ref}
-              abovetitle="MEMBER HUB"
-              title="Discord"
-              buttomTitle="Join Discord"
-              description={
-                <>
-                  <p  className="text-colorText text-base">
-                    Stay updated on all new content and connect with the community 
-                    through our exclusive Discord channel. You'll get access to the best 
-                    market signals, analyses, and support, along with real-time 
-                    updates and discussions.
-                  </p>
-                </>
-              }
-              button="Start Now"
-              button_link="/"
-            />
-            <Session
-              refSession={session2Ref}
               abovetitle="Research and Market Insights"
               title="Reports"
               description={
@@ -147,7 +123,7 @@ export const Session3 = () => {
                           />
                         <button 
                           type="submit"
-                          className='rounded-full bg-[#6438F4] py-4 px-9 text-white font-extrabold font-main hover:transition hover:duration-500 hover:rounded-lg'
+                          className='bg-[#6438F4] py-4 px-9 text-white font-extrabold font-main rounded-3xl transition-all duration-500 ease-in-out hover:rounded-lg'
                         >
                           SIGN UP
                         </button>
@@ -160,7 +136,7 @@ export const Session3 = () => {
               }
             />
             <Session
-              refSession={session3Ref}
+              refSession={session2Ref}
               abovetitle="All-In-One Investor HUB"
               title="Sync Hub - Platform"
 

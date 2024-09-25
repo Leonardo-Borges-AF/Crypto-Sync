@@ -3,6 +3,15 @@ export default {
   content: ["./src/**/*.{js,jsx,ts,tsx}"],
   theme: {
     extend: {
+      animation: {
+        'infinite-scroll': 'infinite-scroll 25s linear infinite',
+        },
+        keyframes: {
+        'infinite-scroll': {
+            from: { transform: 'translateX(0)' },
+            to: { transform: 'translateX(-100%)' },
+        }
+        },
       boxShadow: {
         custom: "0px 8px 32px 0px rgba(158, 12, 255, 0.32)",
         custom2: `0px 0px 35.5px 0px rgba(55, 0, 92, 0.70)`,

@@ -9,6 +9,13 @@ import Consulting from '/images/icons/Consulting.png'
 import Portfolios from '/images/icons/Portfolios.png'
 import Ideas from '/images/icons/Ideas.png'
 import Educational from '/images/icons/Educational.png'
+import binance from '/images/binanceLogo.png'
+import nortech from '/images/nortechLogo.png'
+import circle from '/images/circleLogo.png'
+import wunder from '/images/wunderLogo.png'
+import alphractal from '/images/alphractalLogo.png'
+import google from '/images/googleLogo.png'
+import microsoft from '/images/microsoftLogo.png'
 
 
 export const Session1 = () => {
@@ -17,6 +24,7 @@ export const Session1 = () => {
   const [currentCharIndex, setCurrentCharIndex] = useState(0);
   const [isDeleting, setIsDeleting] = useState(false);
   const [displayedText, setDisplayedText] = useState('');
+ 
 
   useEffect(() => {
     const handleTyping = () => {
@@ -61,7 +69,7 @@ export const Session1 = () => {
           containerRect.height - videoHeight
         ) {
           video.style.position = 'fixed'
-          video.style.top = '180px'
+          video.style.top = '80px'
         } else if (containerRect.top >= 0) {
           video.style.position = 'relative'
           video.style.top = '0'
@@ -103,7 +111,7 @@ export const Session1 = () => {
           {!isMobile && (
             <video
               ref={videoRef}
-              className="absolute top-24 object-cover -z-10 mix-blend-lighten w-[750px] left-1/2 transform -translate-x-1/2"
+              className="absolute object-cover -z-10 mix-blend-lighten w-[750px] left-1/2 transform -translate-x-1/2"
               autoPlay
               loop
               muted
@@ -119,26 +127,105 @@ export const Session1 = () => {
               playsInline
               src={Video}
             ></video>
-          <div className='flex flex-col w-full items-center gap-9 md:pt-[470px] md:mb-0 mb-14'>
-            <div>
+          <div className='flex flex-col w-full items-center gap-9 md:pt-[400px] md:mb-8 mb-14'>
+            <div className='flex flex-col items-center gap-4'>
               <h2 className='text-white font-main md:font-bold font-semibold md:text-[50px] leading-tight text-4xl text-center '>
                 The all-in-one Crypto Hub <br />
-                for: <span className='bg-gradient-to-b from-[#4B19F0] via-[#4B19F0] to-[#A78CFE] inline-block text-transparent bg-clip-text'>{displayedText}</span>
+                for: <span className='text-[#6438F4]'>{displayedText}</span>
               </h2>
               <p className='text-white font-main md:text-xl text-lg md:text-start text-center'>
                 Your Crypto in SYNC with our knowledge and expertise, equals Success.
               </p>
             </div>
             
-            <button className='bg-[#6438F4] rounded-full py-3 px-16 text-white font-main font-extrabold items-center transition duration-500 ease-in-out transform hover:rounded-lg'>
-              START NOW
-            </button>
+            <a href="https://app.cryptosync.com.au/checkout/cryptosync-premium">
+              <button className='relative bg-[#6438F4] py-3 px-16 text-white font-main font-extrabold items-center rounded-3xl transition-all duration-500 ease-in-out hover:rounded-lg'>
+                <div className='absolute top-0 left-0 bg-white size-[2px] rounded-full'/>
+                <div className='absolute bottom-0 right-0 bg-white size-[2px] rounded-full'/>
+                <div className='absolute bottom-0 left-0 bg-white size-[2px] rounded-full'/>
+                <div className='absolute top-0 right-0 bg-white size-[2px] rounded-full'/>
+                START NOW
+              </button>
+            </a>
+            
+           
+          </div>
+          
+          <div className='relative w-screen left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] py-4 mb-16'>
+            {/* Sombra esquerda */}
+            <div className='absolute top-0 left-0 h-full w-1/6 bg-gradient-to-r from-black/100 to-transparent z-10 pointer-events-none'></div>
+            
+            {/* Sombra direita */}
+            <div className='absolute top-0 right-0 h-full w-1/6 bg-gradient-to-l from-black/100 to-transparent z-10 pointer-events-none'></div>
+
+            {/* Container do carrossel */}
+            <div id="cards-section" className='flex overflow-hidden w-full items-center'>
+              <div className='flex gap-12 items-center justify-between space-x-4 animate-scroll w-full'>
+                <img src={binance} className='w-[165px] h-[35px]'/>
+                <img src={alphractal} className='w-[174px] h-[37px]'/>
+                <img src={nortech} className='w-[164px] h-[53px]'/>
+                <img src={circle} className='w-[106px] h-[33px]'/>
+                <img src={wunder} className='w-[213px] h-[36px]'/>
+                <img src={google} className='w-[87px] h-[72px]'/>
+                <img src={microsoft} className='w-[151px] h-[68px]'/>
+                <img src={binance} className='w-[165px] h-[35px]'/>
+                <img src={alphractal} className='w-[174px] h-[37px]'/>
+                <img src={nortech} className='w-[164px] h-[53px]'/>
+                <img src={circle} className='w-[106px] h-[33px]'/>
+                <img src={wunder} className='w-[213px] h-[36px]'/>
+                <img src={google} className='w-[87px] h-[72px]'/>
+                <img src={microsoft} className='w-[151px] h-[68px]'/>
+                <img src={binance} className='w-[165px] h-[35px]'/>
+                <img src={alphractal} className='w-[174px] h-[37px]'/>
+                <img src={nortech} className='w-[164px] h-[53px]'/>
+                <img src={circle} className='w-[106px] h-[33px]'/>
+                <img src={wunder} className='w-[213px] h-[36px]'/>
+                <img src={google} className='w-[87px] h-[72px]'/>
+                <img src={microsoft} className='w-[151px] h-[68px]'/>
+                <img src={binance} className='w-[165px] h-[35px]'/>
+                <img src={alphractal} className='w-[174px] h-[37px]'/>
+                <img src={nortech} className='w-[164px] h-[53px]'/>
+                <img src={circle} className='w-[106px] h-[33px]'/>
+                <img src={wunder} className='w-[213px] h-[36px]'/>
+                <img src={google} className='w-[87px] h-[72px]'/>
+                <img src={microsoft} className='w-[151px] h-[68px]'/>
+                <img src={binance} className='w-[165px] h-[35px]'/>
+                <img src={alphractal} className='w-[174px] h-[37px]'/>
+                <img src={nortech} className='w-[164px] h-[53px]'/>
+                <img src={circle} className='w-[106px] h-[33px]'/>
+                <img src={wunder} className='w-[213px] h-[36px]'/>
+                <img src={google} className='w-[87px] h-[72px]'/>
+                <img src={microsoft} className='w-[151px] h-[68px]'/>
+                <img src={binance} className='w-[165px] h-[35px]'/>
+                <img src={alphractal} className='w-[174px] h-[37px]'/>
+                <img src={nortech} className='w-[164px] h-[53px]'/>
+                <img src={circle} className='w-[106px] h-[33px]'/>
+                <img src={wunder} className='w-[213px] h-[36px]'/>
+                <img src={google} className='w-[87px] h-[72px]'/>
+                <img src={microsoft} className='w-[151px] h-[68px]'/>
+                <img src={binance} className='w-[165px] h-[35px]'/>
+                <img src={alphractal} className='w-[174px] h-[37px]'/>
+                <img src={nortech} className='w-[164px] h-[53px]'/>
+                <img src={circle} className='w-[106px] h-[33px]'/>
+                <img src={wunder} className='w-[213px] h-[36px]'/>
+                <img src={google} className='w-[87px] h-[72px]'/>
+                <img src={microsoft} className='w-[151px] h-[68px]'/>
+                <img src={binance} className='w-[165px] h-[35px]'/>
+                <img src={alphractal} className='w-[174px] h-[37px]'/>
+                <img src={nortech} className='w-[164px] h-[53px]'/>
+                <img src={circle} className='w-[106px] h-[33px]'/>
+                <img src={wunder} className='w-[213px] h-[36px]'/>
+                <img src={google} className='w-[87px] h-[72px]'/>
+                <img src={microsoft} className='w-[151px] h-[68px]'/>
+                
+              </div>
+            </div>
           </div>
 
           {/* ////////////////////////////////////////////////////////////////////////////////////////////////////// */}
-          <div className='flex flex-col md:gap-[105px] md:pb-20 items-center justify-center md:justify-start w-full gap-9'>
-            <div className='flex md:flex-row flex-col md:justify-between w-full md:gap-0 gap-9 items-center'>
-              <div data-aos="fade-right" className='bg-[#0C0C0D] transition-all duration-700 md:p-6 border border-solid border-[#1A1A1E] rounded-2xl items-center flex flex-col gap-4 w-[310px] hover:shadow-custom4 hover:bg-[#212123]'>
+          <div  className='flex flex-col md:gap-[105px] md:pb-20 items-center justify-center md:justify-start w-full gap-9'>
+            <div  className='flex md:flex-row flex-col md:justify-between w-full md:gap-0 gap-9 items-center'>
+              <div data-aos="fade-right" className='bg-[#0C0C0D] md:p-6 p-4  border border-solid border-[#1A1A1E] rounded-2xl items-center flex flex-col gap-4 w-[310px] transition-all duration-700 ease-in-out hover:shadow-custom4 hover:bg-[#212123]'>
                 <div className='rounded-full size-[74px] bg-[#1D1D20] flex items-center justify-center'>
                   <img src={Reports} className='w-9 h-[43px]' />
                 </div>
@@ -151,7 +238,7 @@ export const Session1 = () => {
                   </p>
                 </div>
               </div>
-              <div data-aos="fade-left" className='bg-[#0C0C0D] hover:bg-[#212123] hover:shadow-custom4 transition duration-300 md:p-6 border border-solid border-[#1A1A1E] rounded-2xl items-center flex flex-col gap-4 w-[310px]'>
+              <div data-aos="fade-left" className='bg-[#0C0C0D] hover:bg-[#212123] hover:shadow-custom4 transition duration-300 md:p-6 p-4 border border-solid border-[#1A1A1E] rounded-2xl items-center flex flex-col gap-4 w-[310px]'>
                 <div className='rounded-full size-[74px] bg-[#1D1D20] flex items-center justify-center'>
                   <img src={Signals} className='w-10 h-[48px]' />
                 </div>
@@ -166,7 +253,7 @@ export const Session1 = () => {
               </div>
             </div>
             <div className='flex md:flex-row flex-col md:justify-between  w-full md:gap-0 gap-9 items-center'>
-              <div data-aos="fade-right" className='bg-[#0C0C0D] hover:bg-[#212123] hover:shadow-custom4 transition duration-300 md:p-6 border border-solid border-[#1A1A1E] rounded-2xl items-center flex flex-col gap-4 w-[310px]'>
+              <div data-aos="fade-right" className='bg-[#0C0C0D] hover:bg-[#212123] hover:shadow-custom4 transition duration-300 md:p-6 p-4 border border-solid border-[#1A1A1E] rounded-2xl items-center flex flex-col gap-4 w-[310px]'>
                 <div className='rounded-full size-[74px] bg-[#1D1D20] flex items-center justify-center'>
                   <img src={Consulting} className='w-[53px] h-[44px]' />
                 </div>
@@ -179,7 +266,7 @@ export const Session1 = () => {
                   </p>
                 </div>
               </div>
-              <div data-aos="fade-left" className='bg-[#0C0C0D] hover:bg-[#212123] hover:shadow-custom4 transition duration-300 md:p-6 border border-solid border-[#1A1A1E] rounded-2xl items-center flex flex-col gap-4 w-[310px]'>
+              <div data-aos="fade-left" className='bg-[#0C0C0D] hover:bg-[#212123] hover:shadow-custom4 transition duration-300 md:p-6 p-4 border border-solid border-[#1A1A1E] rounded-2xl items-center flex flex-col gap-4 w-[310px]'>
                 <div className='rounded-full size-[74px] bg-[#1D1D20] flex items-center justify-center'>
                   <img src={Portfolios} className='w-11 h-[38px]' />
                 </div>
@@ -194,9 +281,9 @@ export const Session1 = () => {
               </div>
             </div>
             <div className='flex md:flex-row flex-col md:justify-between w-full md:gap-0 gap-9 items-center'>
-              <div data-aos="fade-right" className='bg-[#0C0C0D] hover:bg-[#212123] hover:shadow-custom4 transition duration-300 md:p-6 border border-solid border-[#1A1A1E] rounded-2xl items-center flex flex-col gap-4 w-[310px]'>
+              <div data-aos="fade-right" className='bg-[#0C0C0D] hover:bg-[#212123] hover:shadow-custom4 transition duration-300 md:p-6 p-4 border border-solid border-[#1A1A1E] rounded-2xl items-center flex flex-col gap-4 w-[310px]'>
                 <div className='rounded-full size-[74px] bg-[#1D1D20] flex items-center justify-center'>
-                  <img src={Ideas} className='w-[27px] h-11' />
+                  <img src={Ideas} className='w-[27px] ' />
                 </div>
                 <div className='flex flex-col gap-6 items-center'>
                   <p className='text-[#E7E7EF] font-extrabold text-[28px] text-center leading-9 font-Jakarta'>
@@ -207,7 +294,7 @@ export const Session1 = () => {
                   </p>
                 </div>
               </div>
-              <div data-aos="fade-left" className='bg-[#0C0C0D] hover:bg-[#212123] hover:shadow-custom4 transition duration-300 md:p-6 border border-solid border-[#1A1A1E] rounded-2xl items-center flex flex-col gap-4 w-[310px]'>
+              <div data-aos="fade-left" className='bg-[#0C0C0D] hover:bg-[#212123] hover:shadow-custom4 transition duration-300 md:p-6 p-4 border border-solid border-[#1A1A1E] rounded-2xl items-center flex flex-col gap-4 w-[310px]'>
                 <div className='rounded-full size-[74px] bg-[#1D1D20] flex items-center justify-center'>
                   <img src={Educational} className='w-10 h-[46px]' />
                 </div>
