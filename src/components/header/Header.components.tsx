@@ -44,15 +44,35 @@ export const Header = () => {
     
           </div>
 
-          <a href="https://app.cryptosync.com.au/checkout/cryptosync-premium">
-            <button 
+          <a href="https://app.cryptosync.com.au/checkout/cryptosync-premium" className='flex gap-5'>
+            {/* <button 
               className="bg-[#6438F4] relative items-center text-white font-main font-bold md:px-16 md:py-3  px-7 py-1 rounded-3xl transition-all duration-500 ease-in-out hover:rounded-lg">
               <div className='absolute top-0 left-0 bg-white size-[2px] rounded-full'/>
               <div className='absolute bottom-0 right-0 bg-white size-[2px] rounded-full'/>
               <div className='absolute bottom-0 left-0 bg-white size-[2px] rounded-full'/>
               <div className='absolute top-0 right-0 bg-white size-[2px] rounded-full'/>
               Be Premium
+            </button> */}
+            <button className="btn-23">
+              <span className="text">Button</span>
+              <span aria-hidden={true} className="marquee">Button</span>
             </button>
+
+
+            <button className="button1">
+              Be Premium
+              <svg className="icon" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  fill-rule="evenodd"
+                  d="M12 2.25c-5.385 0-9.75 4.365-9.75 9.75s4.365 9.75 9.75 9.75 9.75-4.365 9.75-9.75S17.385 2.25 12 2.25zm4.28 10.28a.75.75 0 000-1.06l-3-3a.75.75 0 10-1.06 1.06l1.72 1.72H8.25a.75.75 0 000 1.5h5.69l-1.72 1.72a.75.75 0 101.06 1.06l3-3z"
+                  clip-rule="evenodd"
+                ></path>
+              </svg>
+            </button>
+            <div className="button-borders">
+              <button className="primary-button"> BUTTON
+              </button>
+            </div>
           </a>
           
 
