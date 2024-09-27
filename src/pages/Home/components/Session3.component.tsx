@@ -164,36 +164,6 @@ export const Session3 = () => {
                   
                 </>
               }
-              // bottomComponent={
-              //   <div className="flex flex-row items-center gap-4 mt-8">
-              //     <div className="flex flex-row">
-              //       <img
-              //         src={image1}
-              //         alt="image1"
-              //         className="w-[48px] h-[48px] rounded-full object-cover"
-              //       />
-              //       <img
-              //         src={image2}
-              //         alt="image2"
-              //         className="w-[48px] h-[48px] rounded-full object-cover  -ml-4"
-              //       />
-              //       <img
-              //         src={image3}
-              //         alt="image3"
-              //         className="w-[48px] h-[48px] rounded-full object-cover  -ml-4"
-              //       />
-              //       <img
-              //         src={image4}
-              //         alt="image4"
-              //         className="w-[48px] h-[48px] rounded-full object-cover  -ml-4"
-              //       />
-              //     </div>
-
-              //     <span className="text-white text-base">
-              //       Join 1.014 others
-              //     </span>
-              //   </div>
-              // }
             />
           </div>
           <div className="relative w-full">

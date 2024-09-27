@@ -18,12 +18,6 @@ export const Header = () => {
           />
           <div className='hidden md:flex items-center gap-28'>
             <a
-              href="#cards-section"
-              className="hidden md:block text-[#EFEFEF] font-light font-main transition-all duration-500 ease-in-out hover:text-[#6438F4]"
-            >
-              Solutions
-            </a>
-            <a
               href="#reports-section"
               className="hidden md:block text-[#EFEFEF] font-light font-main transition-all duration-500 ease-in-out hover:text-[#6438F4]"
             >
@@ -47,7 +41,7 @@ export const Header = () => {
           <a href="https://app.cryptosync.com.au/checkout/cryptosync-premium" className='flex gap-5'>
             <button 
               className="bg-[#6438F4] relative items-center text-white font-main font-bold md:px-16 md:py-3  px-7 py-1 rounded-3xl transition-all duration-500 ease-in-out hover:rounded-lg">
-              Be Premium
+              Get Started
             </button>
           </a>
           
