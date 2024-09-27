@@ -94,7 +94,7 @@ export const Session3 = () => {
     >
       <div
         ref={containerRef}
-        className="relative max-w-[1184px] mx-auto flex flex-col gap-8 py-12 mb-[550px] md:mb-0"
+        className="relative max-w-[1184px] mx-auto flex flex-col gap-8 py-12 md:mb-0"
       >
         <div className="flex flex-col md:flex-row gap-28 relative">
           <div className="gap-16 md:gap-64 flex flex-col max-w-[600px]">
@@ -234,7 +234,7 @@ const Card = ({ image, index, current, next }: TCard) => {
 
   return (
     <div
-      className={`flex flex-col w-[346px] border border-outlined rounded-xl backdrop-blur-md absolute ${className}`}
+      className={`hidden md:flex flex-col w-[346px] border border-outlined rounded-xl backdrop-blur-md absolute ${className}`}
     >
       <img
         src={image}

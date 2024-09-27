@@ -140,10 +140,6 @@ export const Session1 = () => {
             
             <a href="https://app.cryptosync.com.au/checkout/cryptosync-premium">
               <button className='relative bg-[#6438F4] py-3 px-16 text-white font-main font-extrabold items-center rounded-3xl transition-all duration-500 ease-in-out hover:rounded-lg'>
-                <div className='absolute top-0 left-0 bg-white size-[2px] rounded-full'/>
-                <div className='absolute bottom-0 right-0 bg-white size-[2px] rounded-full'/>
-                <div className='absolute bottom-0 left-0 bg-white size-[2px] rounded-full'/>
-                <div className='absolute top-0 right-0 bg-white size-[2px] rounded-full'/>
                 START NOW
               </button>
             </a>
@@ -153,10 +149,10 @@ export const Session1 = () => {
           
           <div className='relative w-screen left-1/2 right-1/2 -ml-[50vw] -mr-[50vw] py-4 mb-16'>
             {/* Sombra esquerda */}
-            <div className='absolute top-0 left-0 h-full w-1/6 bg-gradient-to-r from-black/100 to-transparent z-10 pointer-events-none'></div>
+            <div className='absolute top-0 left-0 h-full w-1/6 bg-gradient-to-r from-black/10 to-transparent z-10 pointer-events-none'></div>
             
             {/* Sombra direita */}
-            <div className='absolute top-0 right-0 h-full w-1/6 bg-gradient-to-l from-black/100 to-transparent z-10 pointer-events-none'></div>
+            <div className='absolute top-0 right-0 h-full w-1/6 bg-gradient-to-l from-black/10 to-transparent z-10 pointer-events-none'></div>
 
             {/* Container do carrossel */}
             <div id="cards-section" className='flex overflow-hidden w-full items-center'>
